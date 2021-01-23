@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Appbar from './Component/Appbar/Appbar.jsx';
+import Signup from './Component/Signup/Signup.jsx';
+import Signin from './Component/Signin/Signin.jsx';
+import Dashboard from './Component/Dashboard/Dashboard.jsx';
+import Cart from './Component/Cart/Cart.jsx';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <BrowserRouter>
+    <Switch>
+    <Route path="/dashboard" component={Dashboard} exact></Route>
+    <Route path="/signup" component={Signup} exact></Route>
+    <Route path="/signin" component={Signin} exact></Route>
+    <Route path="/cart" component={Cart} exact></Route>
+    
+    </Switch>
+    
+    </BrowserRouter>
+      
     </div>
   );
 }
